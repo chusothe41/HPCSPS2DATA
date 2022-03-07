@@ -9,11 +9,9 @@ namespace HPM
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("El programa comienza");
+            Console.WriteLine("The program starts");
             IHPMService hpmService = new HPMService();
-            string testFile = "C:/Users/jesus/Desktop/HPAssets/OUTPUT/aa_her_bindpose.hpm"; // 116 paquetes de vertices
-            //string testFile = "C:/Users/jesus/Desktop/HPAssets/OUTPUT/aa_msc_none_menmeshcage02.hpm";
-            //string testFile = "C:/Users/jesus/Desktop/HPAssets/OUTPUT/aa_con_none_chestalohomora.hpm";
+            string testFile = "";
 
             try
             {
@@ -24,7 +22,7 @@ namespace HPM
                     #region Header
                     hpm.Signature = System.Text.Encoding.ASCII.GetString(reader.ReadBytes(4));
                     hpm.HUnknown1 = reader.ReadUInt16();
-                    hpm.HUnknown2 = reader.ReadUInt16(); // Numero de objetos?
+                    hpm.HUnknown2 = reader.ReadUInt16(); // #of nodes?
                     hpm.HUnknown3 = reader.ReadUInt16();
                     hpm.ElementsCount = reader.ReadUInt16();
                     hpm.HUnknown4 = reader.ReadUInt32();
@@ -32,25 +30,6 @@ namespace HPM
                     hpm.HUnknown6 = reader.ReadUInt16();
                     hpm.HUnknown7 = reader.ReadUInt32();
                     #endregion
-                    //int contador = 0;
-                    //try
-                    //{
-
-                    //    while (true)
-                    //    {
-                    //        if(reader.ReadByte() == 0 && reader.ReadByte() == 0 && reader.ReadByte() == 0 && reader.ReadByte() == 32 &&
-                    //            reader.ReadByte() == 63 && reader.ReadByte() == 63 && reader.ReadByte() == 63 && reader.ReadByte() == 63)
-                    //        {
-                    //            contador++;
-                    //        }
-                    //    }
-
-                    //}
-                    //catch (Exception ex)
-                    //{
-
-                    //    throw;
-                    //}
 
                     #region Element
                     try
